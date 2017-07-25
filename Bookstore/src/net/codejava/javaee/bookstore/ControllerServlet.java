@@ -21,9 +21,16 @@ public class ControllerServlet extends HttpServlet {
     private BookDAO bookDAO;
  
     public void init() {
-        String jdbcURL = getServletContext().getInitParameter("jdbcURL");
+    
+    	String jdbcURL = getServletContext().getInitParameter("jdbcURL");
         String jdbcUsername = getServletContext().getInitParameter("jdbcUsername");
         String jdbcPassword = getServletContext().getInitParameter("jdbcPassword");
+     /*
+        String jdbcURL="jdbc:mysql://localhost:3306/Bookstore";
+        String jdbcUsername="bs";
+        String jdbcPassword="";
+      */  
+        
         
         bookDAO = new BookDAO(jdbcURL, jdbcUsername, jdbcPassword);
  
@@ -37,8 +44,10 @@ public class ControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getServletPath();
- 
-        try {
+        
+		System.out.println("req.getServletPath()  :  " + action);
+       
+		try {
             switch (action) {
             case "/new":
                 showNewForm(request, response);
