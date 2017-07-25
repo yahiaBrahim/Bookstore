@@ -30,11 +30,7 @@
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/</url-pattern>
-        <url-pattern>/new</url-pattern>
-        <url-pattern>/insert</url-pattern>
-        <url-pattern>/delete</url-pattern>
-        <url-pattern>/edit</url-pattern>
-        <url-pattern>/update</url-pattern>
+
     </servlet-mapping>
 
 </web-app>
